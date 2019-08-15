@@ -87,5 +87,5 @@ app.get('*',(req,res)=>{
         name:'iliA'
     })
 })
-
-app.listen(3000, () => { console.log('server is on!' )})
+const port = process.env.PORT || 3000;
+app.listen(port, () => { console.log('server is on port: ',port )})
