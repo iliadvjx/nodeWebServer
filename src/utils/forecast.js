@@ -7,7 +7,10 @@ const forecast = (lat , long , callback) => {
         if(error) callback('Unable To Connect Weather Service!',undefined)
         else if(response.body.error) callback("Cannot Find The Place!" , undefined)
         else
-            callback(undefined , response.body.daily.data[0].summary + ' It is currently ' + response.body.currently.temperature + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.')  
+            callback(undefined , response.body.daily.data[0].summary + ' It is currently ' +
+             response.body.currently.temperature + ' degress out. There is a ' + 
+             response.body.currently.precipProbability + '% chance of rain.\n' + 'WindSpeed is about: ' + response.body.currently.windSpeed +
+             'KM/s and humidity is about '+ response.body.currently.humidity)  
     })
 }
 
