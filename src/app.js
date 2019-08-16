@@ -4,7 +4,7 @@ const app = express()
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
+const os = require('os')
 console.log(__dirname)
 console.log(path.join(__dirname , '../public'));
 
@@ -23,7 +23,7 @@ app.get('',(req , res)=>{
         name: 'iliA'
     })
     console.dir(req.ip)
-    console.dir(req.hostname)
+    console.log(os.cpus()[0].model, os.cpus()[0].speed / 1000 , os.platform() , os.arch(),os.uptime(),process.env.PORT)
     // res.status(400).send('Bad Request')
 
 })
